@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="dom.css">
+</head>
+
+<body>
+
+    <header>
+
+        <button id="button1" onclick="create_div()">Button1</button>
+        <button id="button2" onclick="remove()">Button2</button>
+        <button id="button3">Button3</button>
+        <button id="button4">Button4</button>
+        <button id="button5">Button5
+        </button>
+        <button id="button6">Button6</button>
+
+    </header>
+
+
+    <main>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+
+    <script>
+
+        function create_div() {
+            var main = document.getElementsByTagName("main")[0];
+            var div1 = document.createElement("div");
+            var div2 = document.createElement("div");
+
+            div1.setAttribute("id", "div1");
+            div1.setAttribute("style", "width: 100%; height: 50%; display: flex");
+
+            div2.setAttribute("id", "div2");
+            div2.setAttribute("style", "width: 100%; height: 50%; display: flex");
+
+            main.appendChild(div1);
+            main.appendChild(div2);
+
+            var div1Parent = document.getElementById("div1");
+            var div2Parent = document.getElementById("div2");
+
+            var div11 = document.createElement("div");
+            var div12 = document.createElement("div");
+            var div13 = document.createElement("div");
+
+            var div21 = document.createElement("div");
+            var div22 = document.createElement("div");
+            var div23 = document.createElement("div");
+
+            div11.setAttribute("id", "div11");
+            div11.setAttribute("onclick", "move()");
+            div11.setAttribute("style", "width:33.3%; background-color: green; height: 100%; margin: 10px ");
+            div12.setAttribute("id", "div12");
+            div12.setAttribute("onclick", "move()");
+            div12.setAttribute("style", "width:33.3%; background-color: pink; height: 100%; margin: 10px ");
+            div13.setAttribute("id", "div13");
+            div13.setAttribute("onclick", "move()");
+            div13.setAttribute("style", "width:33.3%; background-color: blue; height: 100%; margin: 10px ");
+
+            div21.setAttribute("id", "div21");
+            div21.setAttribute("onclick", "move()");
+            div21.setAttribute("style", "width:33.3%; background-color: powderblue; height: 100%; margin: 10px ");
+            div22.setAttribute("id", "div22");
+            div22.setAttribute("onclick", "move()");
+            div22.setAttribute("style", "width:33.3%; background-color: red; height: 100%; margin: 10px ");
+            div23.setAttribute("id", "div23");
+            div23.setAttribute("onclick", "move()");
+            div23.setAttribute("style", "width:33.3%; background-color: purple; height: 100%; margin: 10px ");
+
+
+
+
+
+
+            div1Parent.appendChild(div11);
+            div1Parent.appendChild(div12);
+            div1Parent.appendChild(div13);
+
+            div2Parent.appendChild(div21);
+            div2Parent.appendChild(div22);
+            div2Parent.appendChild(div23);
+
+
+            var i = 0;
+            var j = 0;
+            var x = 0;
+
+            for (i = 1; i < 3; i++) {
+                for (j = 1; j < 4; j++) {
+                    x = Math.floor(Math.random() * 11);
+                    document.getElementById("div" + i + j).innerHTML = x;
+                    console.log(x);
+                    console.log("div" + i + j);
+                }
+            }
+        }
+
+        //Kachel Move
+
+        function move() {
+            var element = document.getElementById(event.target.id);
+
+            element.parentNode.insertBefore(element, element.parentNode.firstChild);
+
+            console.log("Test");
+        }
+
+        function remove() {
+
+            for (i=1; i<3; i++) {
+                for(j=2;j=2;j++) {
+
+                    var removeElement = document.getElementById("div"+i+j);
+                    removeElement.parentNode.removeChild(removeElement);
+
+
+                }
+            }
+
+            
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
