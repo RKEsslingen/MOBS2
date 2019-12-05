@@ -1,0 +1,39 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% auto 8%;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background: #fdff80;
+    padding: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #9b8834a2;
+}
+
+main {
+    grid-area: main;
+    background: #9eff80;
+    padding: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #4a9b34a2;
+}
+
+footer {
+    grid-area: footer;
+    background: #ff8086;
+    padding: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #9b344aa2;
+}
+
